@@ -1,10 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :find_user
-  private
-  def find_user
-    @user = User.find(params[:id]) if params[:id]
-  end
-
   def index
     #There is currently no view associated with this action.
     #There will be (admin-gated) in next version.
@@ -12,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    binding.pry
+    @user = User.find(params[:id]) if params[:id]
     @items = Item.where(:user_id => @user.id)
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently
@@ -19,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id]) if params[:id]
     if !@authenticated_user.nil?
       if @authenticated_user.user_type != "admin" && @authenticated_user != @user
         redirect_to user_path(@user)
@@ -29,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def change_password
+    @user = User.find(params[:id]) if params[:id]
     if !@authenticated_user.nil?
       if @authenticated_user.user_type != "admin" && @authenticated_user != @user
         redirect_to user_path(@user)
@@ -39,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id]) if params[:id]
     if @user.update_attributes(params[:user])
       redirect_to user_path(@user)
     else
@@ -65,6 +64,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id]) if params[:id]
     if @user != @authenticated_user && @authenticated_user.user_type != "admin"
       redirect_to root_path
     else

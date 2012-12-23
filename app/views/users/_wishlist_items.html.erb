@@ -1,7 +1,8 @@
+<% binding.pry %>
 <div class="wishlist-items">
   <% @items.each do |item| %>
     <div class="item-photo">
-      <%= item.image_url %>
+      <%= item.photo %>
     </div>
     <div class="item-details">
       <ul>
@@ -10,5 +11,5 @@
         <li>Added on: <%= item.created_at %></li>
       </ul>
     </div>
-
+  <% end %>
 </div>

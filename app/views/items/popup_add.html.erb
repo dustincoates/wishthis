@@ -6,4 +6,6 @@
 <%= form_for [@user, @item] do |f| %>
   <%= hidden_field_tag 'product_name', params[:product_name] %>
   <%= hidden_field_tag 'product_price', params[:product_price] %>
+  <%= hidden_field_tag 'remote_photo_url', params[:product_image_url] %>
+  <%= f.submit "Go" %>
 <% end %>
