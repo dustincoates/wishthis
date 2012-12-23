@@ -5,4 +5,5 @@
 <%= image_tag(params[:product_image_url]) %>
 <%= form_for [@user, @item] do |f| %>
   <%= hidden_field_tag 'product_name', params[:product_name] %>
+  <%= hidden_field_tag 'product_price', params[:product_price] %>
 <% end %>
