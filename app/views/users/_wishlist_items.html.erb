@@ -1,15 +1,16 @@
-<% binding.pry %>
 <div class="wishlist-items">
   <% @items.each do |item| %>
+  <div class="grid_3">
     <div class="item-photo">
-      <%= item.photo %>
+      <%= image_tag(item.photo.thumb.url) %>
     </div>
     <div class="item-details">
       <ul>
         <li><%= link_to item.name, item.item_url %></li>
-        <li><%= item.price %></li>
-        <li>Added on: <%= item.created_at %></li>
+        <li><%= number_to_currency(item.price) %></li>
+        <li>Added <%= time_ago_in_words(item.created_at) %> ago</li>
       </ul>
     </div>
+  </div>
   <% end %>
 </div>

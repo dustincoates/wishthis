@@ -38,11 +38,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     item = Item.new(params[:item])
     item.user_id = @authenticated_user.id
     if item.save
-      redirect_to user_path(@authenticated_user)
+      render :text => '<script type="text/javascript"> window.close() </script>'
     else
       render :new
     end
