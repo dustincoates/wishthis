@@ -1,0 +1,8 @@
+<h1><%= params[:product_name] %></h1>
+<span class="price">
+  <%= number_to_currency(params[:product_price]) %>
+</span>
+<%= image_tag(params[:product_image_url]) %>
+<%= form_for [@user, @item] do |f| %>
+  <%= hidden_field_tag 'product_name', params[:product_name] %>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="wishlist-items">
+  <% @items.each do |item| %>
+    <div class="item-photo">
+      <%= item.image_url %>
+    </div>
+    <div class="item-details">
+      <ul>
+        <li><%= link_to item.name, item.item_url %></li>
+        <li><%= item.price %></li>
+        <li>Added on: <%= item.created_at %></li>
+      </ul>
+    </div>
+
+</div>

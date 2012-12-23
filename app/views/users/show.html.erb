@@ -1,0 +1,11 @@
+<% content_for :title, "The wishlist for #{@user.username}" %>
+<% content_for :meta_description, "View the wishlist made by #{@user.username} at WishThis." %>
+<div class="user-details">
+  <h1><%= @user.username %></h1>
+  <div class="name">
+    <%= @user.first_name %> <%= @user.last_name if @user.last_name %>
+  </div>
+</div>
+<div class="wishlist-items">
+  <%= show_wishlist_items %>
+</div>
