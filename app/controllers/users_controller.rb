@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    binding.pry
     @user = User.find(params[:id]) if params[:id]
     @items = Item.where(:user_id => @user.id)
     if request.path != user_path(@user)

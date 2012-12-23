@@ -25,12 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    if !@authenticated_user.nil?
-      @user = @authenticated_user
-      @item = @user.items.build
-    else
-      redirect_to login_path
-    end
+    #Left blank for now. In the future users may be able to add without bookmarklet.
   end
 
   def popup_add
@@ -43,6 +38,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     item = Item.new(params[:item])
     item.user_id = @authenticated_user.id
     if item.save
