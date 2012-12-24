@@ -8,7 +8,12 @@ class SessionController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:username] = @user.username
       session[:id] = @user[:id]
-      redirect_to user_path(@user)
+      if session[:return_to]
+        redirect_to session[:return_to]
+        session[:return_to] = nil
+      else
+        redirect_to user_path(@user)
+      end
     else
       render :new
     end

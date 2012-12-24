@@ -1,0 +1,24 @@
+.product-form input {
+  border: 0;
+}
+
+.product-form input[type="submit"] {
+  background: #F2594B;
+  border: 1px solid #F27052;
+  color: #FFF;
+  font-size: 1.2em;
+}
+
+.product-form img {
+  padding-bottom: 10px;
+  width: 400px;
+}
+
+#product-name input {
+  width: 100%;
+}
+
+#product-note textarea {
+  height: 100px;
+  width: 100%;
+}

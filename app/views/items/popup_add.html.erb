@@ -1,11 +1,20 @@
 <% content_for :title, "Add a new product to your wishlist" %>
 <% content_for :meta_description, "Add a new product to your wishlist at WishThis." %>
-<%= form_for [@user, @item] do |f| %>
-  <%= f.text_field :name, :value => params[:product_name] %>
-  $<%= f.text_field :price, :value => number_with_precision(params[:product_price], :precision => 2) %>
-  <%= image_tag(params[:product_image_url]) %>
-  <%= f.text_area :note %>
-  <%= f.hidden_field :remote_photo_url, :value => params[:product_image_url] %>
-  <%= f.hidden_field :item_url, :value => params[:product_url] %>
-  <%= f.submit "Go" %>
-<% end %>
+<div class="product-form">
+  <%= form_for [@user, @item] do |f| %>
+    <div id="product-name">
+      <%= f.text_field :name, :value => params[:product_name] %>
+    </div>
+    <div id="product-price">
+      $<%= f.text_field :price, :value => number_with_precision(params[:product_price], :precision => 2) %>
+    </div>
+    <%= image_tag(params[:product_image_url]) %>
+    <div id="product-note">
+      <%= f.label "Add a Note:" %>
+      <%= f.text_area :note %>
+    </div>
+    <%= f.hidden_field :remote_photo_url, :value => params[:product_image_url] %>
+    <%= f.hidden_field :item_url, :value => params[:product_url] %>
+    <%= f.submit "Add Product" %>
+  <% end %>
+</div>
