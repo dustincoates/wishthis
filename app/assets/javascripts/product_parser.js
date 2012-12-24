@@ -29,9 +29,15 @@
     };
 
     productName = document.getElementById("item-title").children[0].innerHTML;
-    productPrice = parseFloat(
-                  document.querySelectorAll(".item-amount")[0].children[1].innerHTML,
-                  10);
+
+    if (document.querySelectorAll(".item-amount").length > 0) {
+      productPrice = parseFloat(
+                    document.querySelectorAll(".item-amount")[0].children[1].innerHTML,
+                    10);
+    } else{
+      //This means the product is sold out.
+      productPrice = 0;
+    };
     productImageURL = document.getElementById(
                       "fullimage_link1").firstChild.firstChild.getAttribute("src");
 
@@ -98,7 +104,7 @@
 
   //Opens new window to add the product to the wishlist.
   function openAddProductWindow (url) {
-    var newWindowFeatures = "menubar=no,location=no,resizable=yes,height=600,width=450"
+    var newWindowFeatures = "menubar=no,location=no,resizable=yes,height=800,width=450"
     window.open(url, "addProductWindow", newWindowFeatures)
   }
 

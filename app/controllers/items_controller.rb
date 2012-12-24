@@ -31,6 +31,8 @@ class ItemsController < ApplicationController
   def popup_add
     session[:return_to] ||= request.original_fullpath
     if !@authenticated_user.nil?
+      #Resetting this so it doesn't stick around forever.
+      session[:return_to] = nil
       @user = @authenticated_user
       @item = @user.items.build
     else

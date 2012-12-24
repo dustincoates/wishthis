@@ -7,7 +7,7 @@
     <div class="item-details">
       <ul>
         <li><h2><%= link_to item.name, item.item_url %></h2></li>
-        <li><%= number_to_currency(item.price) %></li>
+        <li><%= number_to_currency(item.price) if item.price > 0 %></li>
         <li>Added <%= time_ago_in_words(item.created_at) %> ago</li>
         <%= delete_item_link(item) %>
       </ul>
