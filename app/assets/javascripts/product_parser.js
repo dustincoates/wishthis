@@ -14,9 +14,9 @@
     productName = document.getElementById("btAsinTitle").firstChild.nodeValue;
 
     productPrice = document.getElementById('actualPriceValue').firstChild.innerText;
-    productPrice = Number(productPrice.replace(/[^0-9\.]+/g,""));
+    productPrice = productPrice ? Number(productPrice.replace(/[^0-9\.]+/g,"")) : 0;
 
-    productImageURL = document.getElementById('prodImage').getAttribute('src');
+    productImageURL = document.getElementById('prodImage') === null ? document.getElementById('main-image').getAttribute('src') : document.getElementById('prodImage').getAttribute('src');
 
     createURL(productName, productPrice, productImageURL, productURL);
 
@@ -28,9 +28,9 @@
       return notAProductPage();
     };
 
-    productName = document.getElementById("item-title").children[0].innerText;
+    productName = document.getElementById("item-title").children[0].innerHTML;
     productPrice = parseFloat(
-                  document.querySelectorAll(".item-amount")[0].children[1].innerText,
+                  document.querySelectorAll(".item-amount")[0].children[1].innerHTML,
                   10);
     productImageURL = document.getElementById(
                       "fullimage_link1").firstChild.firstChild.getAttribute("src");
@@ -47,14 +47,19 @@
     productName = document.getElementsByTagName("h1")[0].innerHTML;
     productImageURL = document.getElementById("mainImg").getAttribute("src");
 
+
     //They appear to use two different types of price signifiers.
     if (document.getElementsByClassName("price").length > 0){
       //This is for just one price.
       productPrice = document.querySelectorAll(".price")[0].innerHTML;
     }
-    else {
+    else if (document.querySelectorAll(".chips-price").length > 0) {
       //This is for multiple prices. We choose the most expensve one.
       productPrice = document.querySelectorAll(".chips-price")[0].innerHTML;
+    }
+    else {
+      //This is for jewelery.
+      productPrice = document.querySelectorAll(".price-single")[0].innerHTML;
     }
     productPrice = Number(productPrice.replace(/[^0-9\.]+/g,""));
 
