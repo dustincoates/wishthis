@@ -1,0 +1,28 @@
+.pagination {
+  text-align: center;
+}
+
+/*
+=Item styles
+*/
+
+.wishlist-items {
+  margin-top: 20px;
+}
+
+.item-details h2 {
+  margin-bottom: 5px;
+}
+
+.item-details {
+  font-size: .8em;
+}
+
+.item {
+  height: 400px;
+}
+
+.item img {
+  max-width: 240px;
+  width: 100%;
+}

@@ -5,7 +5,6 @@
       productImageURL,
       destinationURL;
 
-
   //Parsers//
 
   function amazonParser () {
@@ -62,8 +61,9 @@
     createURL(productName, productPrice, productImageURL, productURL);
 
     openAddProductWindow(destinationURL);
-
   }
+
+
 
   function unsupportedParser () {
     alert("Sorry, WishThis is in limited availability and doesn't work on this site.")

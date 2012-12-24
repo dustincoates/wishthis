@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]) if params[:id]
-    @items = Item.where(:user_id => @user.id)
+    @items = Item.where(:user_id => @user.id).page(params[:page])
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently
     end

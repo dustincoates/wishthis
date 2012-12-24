@@ -16,6 +16,7 @@
 
 class Item < ActiveRecord::Base
   belongs_to :user
+  paginates_per 12
 
   mount_uploader :photo, PhotoUploader
 end

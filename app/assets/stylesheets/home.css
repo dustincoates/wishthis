@@ -1,0 +1,39 @@
+.intro {
+  text-align: center;
+}
+
+.intro h1  {
+  font-size: 2.5em;
+}
+
+.intro h2 {
+  font-size: 2em;
+}
+
+.new-bookmarklet {
+  background: #F2594B;
+  border: 3px solid #F27052;
+  font-size: 4.5em;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 500px;
+}
+
+  .new-bookmarklet:active{
+    background: #F2836B;
+  }
+
+.new-bookmarklet a {
+  color: #FFF;
+  display: block;
+  padding: 30px;
+}
+
+.how-it-works {
+  margin-top: 20px;
+}
+
+.how-it-works h2 {
+  font-size: 2em;
+}

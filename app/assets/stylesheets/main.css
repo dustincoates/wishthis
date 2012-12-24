@@ -1,3 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Monda);
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  color: #2F3C58;
+  font-family: 'Monda', sans-serif;
+  font-size: 16px;
+}
+
+.container_12 {
+  margin-top: 10px;
+}
+
+a {
+  color: #06736C;
+  text-decoration: none;
+}
+
+  a:visited {
+    color: #053B44;
+  }
+
+  a:hover {
+    color: #36BFA6;
+  }
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+/*
+=Nav style
+*/
+
+nav {
+  border-bottom: solid 2px #000;
+  padding: 10px;
+  width: 100%;
+}
+
+nav li {
+  display: inline;
+  font-size: 1.4em;
+  padding-right: 15px;
 }

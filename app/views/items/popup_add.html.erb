@@ -1,3 +1,5 @@
+<% content_for :title, "Add a new product to your wishlist" %>
+<% content_for :meta_description, "Add a new product to your wishlist at WishThis." %>
 <%= form_for [@user, @item] do |f| %>
   <%= f.text_field :name, :value => params[:product_name] %>
   $<%= f.text_field :price, :value => number_with_precision(params[:product_price], :precision => 2) %>

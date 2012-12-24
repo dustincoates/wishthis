@@ -1,0 +1,36 @@
+<% content_for :title, "Create a universal wishlist with your favorite products" %>
+<% content_for :meta_description, "Create a universal wishlist at WishThis." %>
+<div class="intro grid_12 clearfix">
+  <h1>Drag this to your bookmarks toolbar:</h1>
+  <div class="new-bookmarklet btn">
+    <%= link_to "Wish It", 'javascript: (function(){
+          var wishThisJS = document.createElement("script");
+          wishThisJS.setAttribute("src",
+                                  "http://localhost:3000/assets/product_parser.js");
+          document.body.appendChild(wishThisJS);
+        }());' %>
+  </div><!--.new-bookmarklet .btn-->
+  <h1>And add to your wishlist anywhere.</h1>
+</div><!--.intro-->
+<div class="clear"></div>
+<div class="how-it-works clearfix">
+  <div class="grid_4">
+    <h2>Get it</h2>
+    <p>
+      Drag the bookmarklet up there to your bookmarks toolbar.
+    </p>
+  </div>
+  <div class="grid_4">
+    <h2>Click it</h2>
+    <p>
+      When you're on JCrew, Etsy, or Amazon and you find something you want, click on the bookmarklet.
+      Make sure there's no pop-up blocked.
+    </p>
+  </div>
+  <div class="grid_4">
+    <h2>View it</h2>
+    <p>
+      Return to WishThis to view all of your wished-for items.
+    </p>
+  </div>
+</div><!--.how-it-works-->
