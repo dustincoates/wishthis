@@ -37,12 +37,28 @@ h2 {
 
 nav {
   border-bottom: solid 2px #000;
-  padding: 10px;
+  padding: 10px 0;
   width: 100%;
+}
+
+nav ul {
+  padding-left: 10px;
 }
 
 nav li {
   display: inline;
   font-size: 1.4em;
   padding-right: 15px;
+}
+
+/*
+=Sign up and login form styles
+*/
+
+.sign-up-form label, .login-box label{
+  display: block;
+}
+
+.login-box {
+  margin-bottom: 20px;
 }

@@ -1,23 +1,24 @@
 <% content_for :title, "Login to your account" %>
 <% content_for :meta_description, "Login and get wishing at WishThis, the universal wishlist." %>
 <div class="login-info">
-<div class="login-box ">
-  <%= form_tag '/login' do %>
-    <div class="input-field">
-        <%= label_tag 'Username' %>
-        <%= text_field_tag 'username' %>
-    </div>
-    <div class="input-field">
-        <%= label_tag 'Password' %>
-        <%= password_field_tag 'password' %>
-    </div>
-    <div class="input-field">
-        <%= submit_tag 'Login', :class => 'tk-museo-sans' %>
-    </div>
-  <% end %>
-</div>
-<div class="sign-up">
-  <h4>Don't have an account?
-  <%= link_to 'Sign up', new_user_path %>.</h4>
-</div>
-</div>
+  <div class="login-box grid_8 push_4 clearfix">
+    <%= form_tag '/login' do %>
+      <div class="input-field">
+          <%= label_tag 'Username' %>
+          <%= text_field_tag 'username' %>
+      </div>
+      <div class="input-field">
+          <%= label_tag 'Password' %>
+          <%= password_field_tag 'password' %>
+      </div>
+      <div class="input-field">
+          <%= submit_tag 'Login', :class => 'tk-museo-sans' %>
+      </div>
+    <% end %>
+  </div><!--.login-box-->
+  <div class="clear"></div>
+  <div class="sign-up grid_8 push_4">
+    <h4>Don't have an account?
+    <%= link_to 'Sign up', new_user_path %>.</h4>
+  </div>
+</div><!--.login-info-->

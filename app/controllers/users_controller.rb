@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:username] = @user.username
       session[:id] = @user[:id]
-      redirect_to new_user_map_path(@user)
+      redirect_to user_path(@user)
     else
       render :new
     end
