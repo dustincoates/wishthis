@@ -19,6 +19,8 @@ gem 'pry-rails'
 group :development, :test do
   gem 'rails-footnotes'
   gem 'annotate'
+  gem 'capybara'
+  gem 'rspec-rails'
 end
 
 
