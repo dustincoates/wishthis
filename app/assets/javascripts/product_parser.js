@@ -63,10 +63,12 @@
     openAddProductWindow(destinationURL);
   }
 
-
+  function wishThisParser () {
+    alert("Drag the WishThis bookmarklet to your toolbar.");
+  }
 
   function unsupportedParser () {
-    alert("Sorry, WishThis is in limited availability and doesn't work on this site.")
+    alert("Sorry, WishThis is in limited availability and doesn't work on this site.");
   }
 
   //End Parsers//
@@ -107,6 +109,9 @@
       }
       else if (hostname.indexOf("jcrew") !== -1){
         jcrewParser();
+      }
+      else if (hostname.indexOf("localhost") !== -1 || hostname.indexOf("heroku") !== -1){
+        wishThisParser();
       }
       else{
         unsupportedParser();
