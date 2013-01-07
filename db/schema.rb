@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121223053707) do
+ActiveRecord::Schema.define(:version => 20130107135250) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(:version => 20121223053707) do
     t.string   "item_url"
     t.integer  "user_id"
     t.text     "note"
-    t.boolean  "corrected_status"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.decimal  "price"
     t.string   "photo"
   end
